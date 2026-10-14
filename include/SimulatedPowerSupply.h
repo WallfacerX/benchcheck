@@ -21,7 +21,7 @@ public:
 
     void enableOutput();
     // Keeps both settings; calling this repeatedly is safe.
-    void disableOutput();
+    void disableOutput() noexcept;
 
     double getConfiguredVoltage() const;
     double getCurrentLimit() const;
@@ -32,7 +32,7 @@ public:
 
 private:
     double configuredVoltage_ = 0.0;
-    // Stored only: load behavior and current limiting are not simulated yet.
+    // SimulatedBench checks load demand against this setting.
     double currentLimit_ = 0.0;
     bool outputEnabled_ = false;
 };

@@ -28,7 +28,7 @@ void SimulatedPowerSupply::enableOutput()
     outputEnabled_ = true;
 }
 
-void SimulatedPowerSupply::disableOutput()
+void SimulatedPowerSupply::disableOutput() noexcept
 {
     outputEnabled_ = false;
 }
